@@ -1,4 +1,4 @@
-from MLS_API.API import app
+from API import app
 from flask import jsonify
 
 
