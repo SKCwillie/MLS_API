@@ -1,4 +1,4 @@
-from MLS_API import app
+from MLS_API.API import app
 
 
 @app.route('/', methods=['GET', 'POST'])
