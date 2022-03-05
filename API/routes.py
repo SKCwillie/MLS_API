@@ -1,6 +1,7 @@
 from MLS_API.API import app
+from flask import jsonify
 
 
-@app.route('/', methods=['GET', 'POST'])
+@app.route('/status', methods=['GET', 'POST'])
 def home():
-    return '<h1>This is the start</h1>'
+    return jsonify({'Status': 'UP'})
