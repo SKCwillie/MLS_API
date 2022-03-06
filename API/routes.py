@@ -3,5 +3,5 @@ from flask import jsonify
 
 
 @app.route('/status', methods=['GET', 'POST'])
-def home():
+def status():
     return jsonify({'Status': 'UP'})
