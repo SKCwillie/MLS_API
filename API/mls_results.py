@@ -15,15 +15,14 @@ years_list = list(range(1996, CURRENT_YEAR))
 
 def get_all_results(years=years_list, **kwargs):
     team = kwargs.get('team', None)
-
-    if team:
+    if team and team != 'ALL':
         TeamDF = pd.concat([PastYears[PastYears.Home == team], PastYears[PastYears.Away == team]])
     else:
         TeamDF = PastYears
     results = {}
     for year in years:
         results[year] = {'Regular Season': {}, 'Playoffs': {}}
-        df = TeamDF[TeamDF.Season == year]
+        df = TeamDF[TeamDF.Season == int(year)]
         for i in df.index:
             if df.at[i, 'Round'] != 'Regular Season':
                 results[year]['Playoffs'][i] = {'date': df.at[i, 'Date'],
