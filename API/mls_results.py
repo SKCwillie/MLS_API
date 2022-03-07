@@ -18,6 +18,8 @@ def get_all_results(years=years_list, **kwargs):
 
     if team:
         TeamDF = pd.concat([PastYears[PastYears.Home == team], PastYears[PastYears.Away == team]])
+    else:
+        TeamDF = PastYears
     results = {}
     for year in years:
         results[year] = {'Regular Season': {}, 'Playoffs': {}}

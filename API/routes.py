@@ -7,6 +7,7 @@ from API.mls_results import get_all_results
 def status():
     return jsonify({'Status': 'UP'})
 
+
 @app.route('/results/', methods=['GET'])
 def all_results():
     return jsonify(get_all_results())
