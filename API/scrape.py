@@ -5,6 +5,8 @@ from bs4 import BeautifulSoup
 pd.set_option('display.max_rows', 500)
 pd.set_option('display.max_columns', 500)
 pd.set_option('display.width', 1000)
+csv_url = 'https://raw.githubusercontent.com/SKCwillie/MLS_API/main/Data/96_21.csv'
+AllYears = pd.read_csv(csv_url, index_col=0)
 
 
 def get_this_year():
@@ -19,7 +21,7 @@ def get_this_year():
         if df_results.at[i, 'Date'] == 'Date':
             df_results.drop([i], inplace=True)
             df_fixtures.drop([i], inplace=True)
-        elif df_results.at[i, 'Score'] != df.at[i, 'Score']:
+        elif df_results.at[i, 'Score'] != df_results.at[i, 'Score']:
             df_results.drop([i], inplace=True)
         else:
             df_fixtures.drop([i], inplace=True)
