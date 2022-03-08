@@ -3,7 +3,7 @@ import requests
 from bs4 import BeautifulSoup
 import numpy as np
 import re
-from apscheduler.schedulers.blocking import BlockingScheduler
+
 
 PastYears = pd.read_csv('./API/Data/96_21.csv', index_col=0)
 SEASON = 2022
@@ -124,11 +124,3 @@ def add_current_year(past_years):
 
 
 sched = BlockingScheduler()
-
-
-@sched.scheduled_job('cron', day_of_week='mon-sun', hour=0)
-def scheduled_job():
-    add_current_year(PastYears)
-
-
-sched.start()
