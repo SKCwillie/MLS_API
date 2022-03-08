@@ -117,7 +117,6 @@ def add_current_year(past_years):
         df_results = df_results[['Season', 'Round', 'Venue', 'Date', 'Home', 'GHome', 'GAway', 'Away', 'Winner']]
 
     AllYears = pd.concat([past_years, df_results])
-    AllYears.drop(['Unnamed: 0'], inplace=True, axis=1)
     AllYears.reset_index(inplace=True)
     AllYears.drop(['index'], inplace=True, axis=1)
     AllYears.to_csv('./API/Data/AllYears.csv')
