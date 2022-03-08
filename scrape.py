@@ -123,4 +123,4 @@ def add_current_year(past_years):
     AllYears.to_csv('./API/Data/AllYears.csv')
 
 
-sched = BlockingScheduler()
+add_current_year(PastYears)
