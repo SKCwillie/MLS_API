@@ -1,2 +1,2 @@
 web: gunicorn run:app
-clock: python scrape.py
+scrape: python scrape.py
