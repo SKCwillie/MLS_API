@@ -1,5 +1,7 @@
 from API import app
 from API.mls_results import get_all_results
+from API.scrape import add_current_year
+import pandas as pd
 
 
 @app.route('/status/', methods=['GET', 'POST'])
@@ -9,6 +11,8 @@ def status():
 
 @app.route('/results/', methods=['GET'])
 def all_results():
+    df = pd.read_csv('./API/Data/96_21.csv')
+    add_current_year(df)
     return get_all_results()
 
 
