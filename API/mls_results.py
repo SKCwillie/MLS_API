@@ -10,7 +10,6 @@ AllYears.drop(['Unnamed: 0'], axis=1, inplace=True)
 AllYears.Season = AllYears.Season.astype('int64')
 AllYears.GHome = AllYears.GHome.astype('int64')
 AllYears.GAway = AllYears.GAway.astype('int64')
-print(AllYears)
 CURRENT_YEAR = 2022
 years_list = list(range(1996, CURRENT_YEAR+1))
 
