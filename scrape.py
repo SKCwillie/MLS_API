@@ -119,7 +119,8 @@ def add_current_year(past_years):
     AllYears = pd.concat([past_years, df_results])
     AllYears.reset_index(inplace=True)
     AllYears.drop(['index'], inplace=True, axis=1)
-    AllYears.to_csv('./API/Data/AllYears.csv')
+    AllYears.to_csv('AllYears.csv')
+    print('scrape.py run successful')
 
 
 add_current_year(PastYears)

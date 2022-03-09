@@ -2,9 +2,9 @@ import pandas as pd
 import json
 
 try:
-    AllYears = pd.read_csv('./API/Data/AllYears.csv')
+    AllYears = pd.read_csv('../AllYears.csv')
 except FileNotFoundError:
-    AllYears = pd.read_csv('./API/Data/96_21.csv')
+    AllYears = pd.read_csv('../96_21.csv')
 AllYears.dropna(inplace=True)
 AllYears.drop(['Unnamed: 0'], axis=1, inplace=True)
 AllYears.Season = AllYears.Season.astype('int64')
