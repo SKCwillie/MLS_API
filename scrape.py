@@ -3,7 +3,7 @@ import requests
 from bs4 import BeautifulSoup
 import numpy as np
 import re
-
+from API import app
 
 PastYears = pd.read_csv('./API/Data/96_21.csv', index_col=0)
 SEASON = 2022
@@ -120,7 +120,7 @@ def add_current_year(past_years):
     AllYears.reset_index(inplace=True)
     AllYears.drop(['index'], inplace=True, axis=1)
     AllYears.to_csv('AllYears.csv')
-    print('scrape.py run successful')
+    app.logger.info('scrape.py finished running')
 
 
 add_current_year(PastYears)
