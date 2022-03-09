@@ -5,7 +5,7 @@ import numpy as np
 import re
 from API import app
 
-PastYears = pd.read_csv('./API/Data/96_21.csv', index_col=0)
+PastYears = pd.read_csv('./96_21.csv', index_col=0)
 SEASON = 2022
 teams = {'Atlanta Utd': ['ATL', 'Atlanta'],
          'Austin FC': ['ATX', 'Austin'],
